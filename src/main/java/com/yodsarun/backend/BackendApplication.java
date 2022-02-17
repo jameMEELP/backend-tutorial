@@ -1,24 +1,30 @@
 package com.yodsarun.backend;
 
-import java.util.Optional;
+import java.util.List;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.context.annotation.Bean;
 
 import com.yodsarun.backend.modal.Users;
 import com.yodsarun.backend.repository.UserRepository;
 
 @SpringBootApplication
+@EnableCaching
 public class BackendApplication {
 	private static final Logger log = LoggerFactory.getLogger(BackendApplication.class);
 
 	public static void main(String[] args) {
 		SpringApplication.run(BackendApplication.class, args);
+		log.info("BackendApplication has been start successfully.");
 	}
 
+	// init Customer
 //	@Bean
 //	public CommandLineRunner demo(UserRepository repository) {
 //		return (args) -> {
